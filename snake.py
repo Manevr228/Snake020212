@@ -17,7 +17,6 @@ snake_block = 10
 snake_speed = 15
 font_style = pygame.font.SysFont("Arial", 25)
 score_font = pygame.font.SysFont("Arial", 35)
-s = pygame.display.set_mode((dis_width,dis_height))
 TIME_LIMIT = 75
 end_time = time.time() + TIME_LIMIT
  
@@ -96,10 +95,11 @@ def gameLoop():
            foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
            Length_of_snake += 1
 t_left = max(0, int(end_time - time.time()))
-s.blit(font_style.render(f"Время: {t_left}", True, (200, 220, 255)), (10, 10))
+dis.blit(font_style.render(f"Время: {t_left}", True, (200, 220, 255)), (10, 10))
        clock.tick(snake_speed)
    pygame.quit()
    quit()
 gameLoop()
+
 
 
